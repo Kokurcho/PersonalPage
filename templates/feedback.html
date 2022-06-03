@@ -1,27 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    {% load static %}
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+	<link href="{% static 'styles/style.css' %}" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Times+New+Roman' rel='stylesheet' type='text/css'>
+
+<nav id="menuVertical">
+    <ul>
+
+        <li><a href="">Меню</a>
+            <ul>
+                <li><a href="./about.html" >Услуги</a>
+</li>
+                <li><a href="./main_menu.html" >Главное меню</a></li>
+                <li><a href="./form_telegram.html" >Отзыв</a> </li>
+                <li><a href="./valid.html" >Регистрация</a> <br></li>
+            </ul>
+        </li>
+    </ul>
+</nav><!--menuVertical-->
+
+
 <body>
+<a href="./about.html" >Услуги</a>
+<a href="./main_menu.html" >Главное меню</a>
 <div class="main">
 
     <div class="container">
-        <h1 align="center">COLDWITHU STORE</h1>
+        <h1 align="center">Kokurcho</h1>
 
-        <script>
+        {% comment %}<script>
             const send = function () {
             let name = document.getElementById('name').value;
             let mes = document.getElementById('mes').value;
-            let url = `https://api.telegram.org/bot5274531336:AAFJ35CS3ojA0kUUn2JklOEkre02TPRl8RE/sendMessage?chat_id=520531931&text=user ${name} send ${mes}`;
+            let url = `https://api.telegram.org/bot5125225764:AAFO3f9kvH1RKCPM8S2T_J1aF-U9KTHn4fw/sendMessage?chat_id=-601508004&text=user ${name} send ${mes}`;
 
             let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
             let xhr = new XHR();
             xhr.open('GET', url, true);
             xhr.send();
             }
-        </script>
+        </script>{% endcomment %}
 
 
         <form method="POST">

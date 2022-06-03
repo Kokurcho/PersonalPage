@@ -1,19 +1,29 @@
-<!DOCTYPE html>
 <html>
     {% load static %}
 <head>
 	<link href="{% static 'styles/style.css' %}" rel="stylesheet" type="text/css">
-    
+    <link href='http://fonts.googleapis.com/css?family=Times+New+Roman' rel='stylesheet' type='text/css'>
 
-</head>
+<nav id="menuVertical">
+    <ul>
 
-<head>
-<meta charset="utf-8" />
-<title>HTML Document</title>
-</head>
+        <li><a href="">Меню</a>
+            <ul>
+                <li><a href="./about.html" >Услуги</a>
+</li>
+                <li><a href="./main_menu.html" >Главное меню</a></li>
+                <li><a href="./form_telegram.html" >Отзыв</a> </li>
+                <li><a href="./valid.html" >Регистрация</a> <br></li>
+            </ul>
+        </li>
+    </ul>
+</nav><!--menuVertical-->
+
 
 <body>
-
+<a href="./about.html" >Услуги</a>
+<a href="./main_menu.html" >Главное меню</a>
+ <h1 align="center">Обратная связь</h1>
 <form action=contact.html name="feedback-form">
 <label for="login"> Логин: <input minlength="3" type="text" id="login" name="login" placeholder="Логин"></label> <br>
 <label for="feedback"> Обратная связь: <input minlength="3" type="text" id="feedback" name="feedback" placeholder="Обратная связь"></label> <br>

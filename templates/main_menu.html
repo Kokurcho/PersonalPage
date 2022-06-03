@@ -5,88 +5,15 @@
     <link href='http://fonts.googleapis.com/css?family=Times+New+Roman' rel='stylesheet' type='text/css'>
 
 
-<nav id="menuVertical">
-    <ul>
-        
-        <li><a href="">Меню</a>
-            <ul>
-                <li><a href="./about.html" >Услуги</a></li>
-                <li><a href="./contact.html" >Контактная информация</a></li>
-                <li><a href="./form_telegram.html" >Отзыв</a> </li>
-                <li><a href="./valid.html" >Регистрация</a> <br></li>
-            </ul>
-        </li>
-    </ul>
-</nav><!--menuVertical-->
-
-<form action="" method="post">
-    {% csrf_token %}
-    <span>Имя: </span><br>
-    <input type="text" id="name"><br>
-    <span>Комментарий</span><br>
-    <textarea id="comment" cols="30" rows="10"></textarea><br>
-    <button id="button">Отправить</button>
-  </form>
-
-  <script>
-    var button = document.getElementById('button'),
-        xmlhttp = new XMLHttpRequest();
-    button.addEventListener('click', function() {
-     var name = document.getElementById('name').value.replace(/<[^>]+>/g,''),
-         comment = document.getElementById('comment').value.replace(/<[^>]+>/g,'');
-     if(name === '' || comment === '') {
-      alert('Заполните все поля!');
-      return false;
-     }
-     xmlhttp.open('post', 'C:\django\kokurcho_site\static\libs\add_comment.php', true);
-     xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-     xmlhttp.send("name=" + encodeURIComponent(name) + "&comment=" + encodeURIComponent(comment));
-    });
-  </script>
-
-<body onload="getComments();">
-    <script>
-     function getComments(count = 0) {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open('post', 'C:\django\kokurcho_site\static\libs\get_comments.php', true);
-      xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-      xmlhttp.send('count=' + count);
-      xmlhttp.onreadystatechange = function() {
-       if(xmlhttp.readyState == 4) {
-        if(xmlhttp.status == 200) {
-         var data = xmlhttp.responseText;
-         if(data != 'empty') {
-          data = JSON.parse(data);
-          for(var i = 0; i < data.length; i++) {
-           var parent = document.getElementsByTagName('body')[0];
-           var elem = document.createElement('div');
-           elem.className = 'comments';
-           parent = parent.appendChild(elem);
-           elem = document.createElement('span');
-           parent.appendChild(elem);
-           var text = data[i].name;
-           var textNode = document.createTextNode(text);
-           elem.appendChild(textNode);
-           elem = document.createElement('hr');
-           parent.appendChild(elem);
-           elem = document.createElement('div');
-           elem.className = 'comment';
-           parent.appendChild(elem);
-           text = data[i].comment;
-           textNode = document.createTextNode(text);
-           elem.appendChild(textNode);
-           var max = data[i].id;
-          }
-          count = max;
-         }
-        }
-       }
-      };
-      setTimeout(function() {
-       getComments(count);
-      }, 3000);
-     }
-    </script>
-  </body>
 </head>
+<body>
+<h1>Главное меню</h1>
+  <!-- Комментарий -->
+    <p><a href="./about.html" target="_blank"><strong>Услуги</strong></a><br></p>
+    <p><a href="./contact.html.html" target="_blank"><strong>Контакты</strong></a><br></p>
+    <p><a href="./valid.html" target="_blank"><strong>Регистрация</strong></a><br></p>
+    <p><a href="./form_telegram.html" target="_blank"><strong>Отзыв</strong></a><br></p>
+    <p><a href="./feedback.html" target="_blank"><strong>Комментарии</strong></a><br></p>
+
+</body>
 </html>
