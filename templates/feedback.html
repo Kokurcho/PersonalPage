@@ -9,11 +9,12 @@
 
         <li><a href="">Меню</a>
             <ul>
-                <li><a href="./about.html" >Услуги</a>
-</li>
+                <li><a href="./about.html" >Услуги</a></li>
                 <li><a href="./main_menu.html" >Главное меню</a></li>
                 <li><a href="./form_telegram.html" >Отзыв</a> </li>
-                <li><a href="./valid.html" >Регистрация</a> <br></li>
+                <li><a href="./valid.html" >Регистрация</a> </li>
+                <li><a href="./form_telegram.html.html" >Контакт</a> </li>
+                <li><a href="./feedback.html.html" >Комментарий</a> <br></li>
             </ul>
         </li>
     </ul>
@@ -26,26 +27,29 @@
 <div class="main">
 
     <div class="container">
-        <h1 align="center">Kokurcho</h1>
+        <h1 align="center">В Московском зоопарке попросили не кормить жирафа Самсона</h1>
+        <div style="text-align: center;"><img src="static/img/samson.jpg", style="width:600px;height:500px;" /></div>
+        <p>
+            Посетителей Московского зоопарка предупредили, что не нужно кормить жирафа Самсона.
+        </p>
+        <p>
+        Администрация зоопарка напомнила, что Самсон – зверь пожилой: ему скоро исполнится 29 лет, по человеческим меркам это около 95 лет.
+        Поэтому жирафу нужно соблюдать диету.
+        </p>
+        <p>
+        Из-за солидного возраста Самсон гуляет только когда температура воздуха на улице не ниже +15 градусов и почти нет ветра.
+        </p>
+        <p>
+        Ранее радио Sputnik сообщало, что дымчатые леопарды появились в коллекции Московского зоопарка.
+        </p>
 
-        {% comment %}<script>
-            const send = function () {
-            let name = document.getElementById('name').value;
-            let mes = document.getElementById('mes').value;
-            let url = `https://api.telegram.org/bot5125225764:AAFO3f9kvH1RKCPM8S2T_J1aF-U9KTHn4fw/sendMessage?chat_id=-601508004&text=user ${name} send ${mes}`;
-
-            let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-            let xhr = new XHR();
-            xhr.open('GET', url, true);
-            xhr.send();
-            }
-        </script>{% endcomment %}
-
+        <h1>
+            Комментарии
+        </h1>
 
         <form method="POST">
 
             {{ comment }}
-
 
         </form>
         <button onclick="sendComment()">send</button>
@@ -58,6 +62,7 @@
     </div>
     <script>
         const comments = document.getElementById('comments')
+
         async function sendComment(){
 
             const commentForm = document.forms[0];
@@ -97,7 +102,7 @@
                         data.forEach(comment => {
                             const commentElement = document.createElement("div");
                             const commentHeading = document.createElement("h1");
-                            const commentBody = document.createElement("p");
+                            const commentBody = document.createElement("h1");
 
                             commentBody.innerText = comment.contents;
                             commentHeading.innerText = comment.email;

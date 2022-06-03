@@ -20,6 +20,17 @@ h1 {
   padding: 20px 0;
 
 }
+h2 {
+  font-size: 31px;
+  text-align: center;
+
+}
+
+h3 {
+  font-size: 27px;
+  text-align: center;
+
+}
 
 p, li {
   font-family: 'Oswald'; 
