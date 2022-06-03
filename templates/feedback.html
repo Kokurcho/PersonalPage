@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+
+    <div class="container">
+        <h1 align="center">COLDWITHU STORE</h1>
+
+        <script>
+            const send = function () {
+            let name = document.getElementById('name').value;
+            let mes = document.getElementById('mes').value;
+            let url = `https://api.telegram.org/bot5274531336:AAFJ35CS3ojA0kUUn2JklOEkre02TPRl8RE/sendMessage?chat_id=520531931&text=user ${name} send ${mes}`;
+
+            let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+            let xhr = new XHR();
+            xhr.open('GET', url, true);
+            xhr.send();
+            }
+        </script>
+
+
+        <form method="POST">
+
+            {{ comment }}
+
+
+        </form>
+        <button onclick="sendComment()">send</button>
+
+        <div id="comments">
+
+        </div>
+
+
+    </div>
+    <script>
+        const comments = document.getElementById('comments')
+        async function sendComment(){
+
+            const commentForm = document.forms[0];
+            const email = commentForm.email.value;
+            const contents = commentForm.contents.value;
+
+            try {
+
+                await fetch('/create_comment/', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        contents: contents,
+                        })
+                });
+                await fetchComments();
+
+            }
+            catch (e) {
+                alert(e);
+            }
+        }
+
+        async function fetchComments() {
+            comments.innerHTML = "";
+
+            try {
+                await fetch('/get_comment/', {
+                    "method": "GET",
+                    "mode": "no-cors",
+                }).then(async (response) => {
+                    response.json().then(data => {
+                        data.forEach(comment => {
+                            const commentElement = document.createElement("div");
+                            const commentHeading = document.createElement("h1");
+                            const commentBody = document.createElement("p");
+
+                            commentBody.innerText = comment.contents;
+                            commentHeading.innerText = comment.email;
+                            commentElement.appendChild(commentHeading);
+                            commentElement.appendChild(commentBody);
+                            comments.appendChild(commentElement);
+                         });
+
+                    })
+                });
+            }
+            catch (e) {
+                alert(e);
+            }
+        }
+
+
+        fetchComments();
+    </script>
+
+</div>
+
+</body>
+</html>

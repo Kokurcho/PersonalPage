@@ -1,0 +1,202 @@
+html {
+	background-color: #c1ffee;
+  font-size: 10px;
+  font-family: 'Times New Roman';
+}
+
+@font-face { 
+  font-family: 'Oswald',sans-serif; 
+  src: url('static/fonts/Oswald-VariableFont_wght.ttf'); 
+}
+
+.oswald {
+font-family: 'Oswald', 'Times New Roman'; 
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+
+  padding: 20px 0;
+
+}
+
+p, li {
+  font-family: 'Oswald'; 
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+body {
+  font-family: 'Oswald'; 
+  width: 900px;
+  margin: 0 auto;
+  background-color: #c1ffee;
+  padding: 0 20px 20px 20px;
+  border: 3px solid black;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  text-align: left;
+  background-color: grey;
+  left: 5px;
+  top: 5px;
+  height: 26px;
+  color: white;
+  border-color: black;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 2px 2px 1px black;
+  padding: 2px 4px;
+  border: solid 1px black;
+}
+
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  background-color:white;
+  color:black;
+  box-shadow: 2px 2px 1px black;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+#menuVertical{width:100%;height:auto;}
+    #menuVertical ul{
+        display:block;
+        width:10%;
+        height:auto;
+        margin:0px;
+        padding:0px;
+        list-style:none;
+        position:fixed;
+    }
+        #menuVertical ul li{display:block; width:100%; height:auto; position:relative;}
+            #menuVertical ul li a{
+                position:relative;
+                display:block;
+                width:100%;
+                height:auto;
+                box-sizing:border-box;
+                font-size:13px;
+                text-transform:uppercase;
+                font-weight:bold;
+                color:#FBF7F7;
+                line-height:1.2em;
+                padding:10px 15px;
+                background:#3A9CD3;
+                border-top:1px solid #236A92;
+                text-decoration:none;
+            }
+            #menuVertical ul > li:first-child > a{border:0px;}
+            #menuVertical ul li a:hover, #menuVertical ul li:hover a{
+                background:#0A3CC1;
+            }
+            #menuVertical ul li ul{
+                position:absolute;
+                top:0px;
+                left:100%;
+                display:none;
+                width:150px;
+            }
+            
+            #menuVertical ul li:hover > ul{display:block;}
+                #menuVertical ul li ul li a{
+                    text-transform:none;
+                    padding:5px 20px;
+                }
+                    #menuVertical ul li ul li a:hover, #menuVertical ul li ul li:hover > a{
+                        background:#75C1D4;
+                        color:#0A3CC1;
+                    }
+                    
+/*valid*/
+@import url("//fonts.googleapis.com/css?family=Open+Sans");
+
+/* Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.container {
+  width: 500px;
+  margin: 25px auto;
+}
+
+form {
+  padding: 20px;
+  background: #04192e;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+form label,
+form input,
+form button {
+  border: 0;
+  margin-bottom: 3px;
+  display: block;
+  width: 100%;
+}
+form input {
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  color: rgb(0, 0, 0);
+  padding: 0 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form input:valid{
+  color:#4CAF50
+
+}
+form button {
+  height: 30px;
+  line-height: 30px;
+  background: #f1b40a;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+form .error {
+  color: #ff0000;
+}
+.comments {
+  border: 1px solid green;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+}
+
+.comments span {
+  font-family: Tahoma;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+	<link href="{% static 'styles/style.css' %}" rel="stylesheet" type="text/css">
+    
+
+</head>
+
+<head>
+<meta charset="utf-8" />
+<title>HTML Document</title>
+</head>
+
+<body>
+
+<form action=contact.html name="feedback-form">
+<label for="login"> Логин: <input minlength="3" type="text" id="login" name="login" placeholder="Логин"></label> <br>
+<label for="feedback"> Обратная связь: <input minlength="3" type="text" id="feedback" name="feedback" placeholder="Обратная связь"></label> <br>
+
+<label><button onclick="send()" type="submit">Отправить обратную связь</button></label>
+</form>
+
+<script>
+const send = function () {
+    let login = document.getElementById('login').value;
+    let feedback = document.getElementById('feedback').value;
+    let url = `https://api.telegram.org/bot5125225764:AAFO3f9kvH1RKCPM8S2T_J1aF-U9KTHn4fw/sendMessage?chat_id=-601508004&text=Пользователь ${login} написал: ${feedback}`;
+    console.log(login);
+    console.log(feedback);
+    let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+    let xhr = new XHR();
+    xhr.open('GET', url, true);
+    xhr.send();
+    }
+
+</script>
+
+<script src={% static 'jquery-validation-1.15.1/lib/jquery-1.9.1.js' %}></script>
+<script src={% static 'jquery-validation-1.15.1/dist/jquery.validate.min.js' %}></script>
+<!-- <script src="../WEB/jquery-validation-1.15.1/lib/jquery-1.9.1.js"></script>
+<script src="../WEB/jquery-validation-1.15.1/dist/jquery.validate.min.js"></script> -->
+
+</body>
+
+</html>
