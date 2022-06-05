@@ -22,8 +22,9 @@
 
 
 <body>
-<a href="./about.html" >Услуги</a>
-<a href="./main_menu.html" >Главное меню</a>
+    <main class="content">
+{#<a href="./about.html" >Услуги</a>#}
+{#<a href="./main_menu.html" >Главное меню</a>#}
  <h1 align="center">Обратная связь</h1>
 <form action=contact.html name="feedback-form">
 <label for="login"> Логин: <input minlength="3" type="text" id="login" name="login" placeholder="Логин"></label> <br>
@@ -51,7 +52,7 @@ const send = function () {
 <script src={% static 'jquery-validation-1.15.1/dist/jquery.validate.min.js' %}></script>
 <!-- <script src="../WEB/jquery-validation-1.15.1/lib/jquery-1.9.1.js"></script>
 <script src="../WEB/jquery-validation-1.15.1/dist/jquery.validate.min.js"></script> -->
-
+    </main>
 </body>
 
 </html>
