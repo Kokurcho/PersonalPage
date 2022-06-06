@@ -1,13 +1,13 @@
-# Учебный проект по предмету Web-программирование. Личная страничка
-## Использованные технологии:
+# Web-programming project. Personal page
+## Technologies used:
 - Django Framework
-- База данных Sqlite3
-- JQuery Validation для валидации форм
-- Телеграм-бот для отправки уведомлений в чат
-- AJAX для асинхронной отрисовки комментариев
-- LocalStorage для добавления тёмной/светлой темы, даты последнего визита и перевода статьи на английский язык
-- Docker для разбиения проекта на микросервисы
-- Хостинг pythonanywhere.com
-## Ссылка на сайт на хостинге:
+- Sqlite3 database
+- JQuery Validation for form validation
+- Telegram bot to send notifications to chat
+- AJAX for asynchronous drawing of comments
+- LocalStorage for adding dark/light theme, last visit date and article translation
+- Docker for splitting a project into microservices
+- Hosting pythonanywhere.com
+## Hosting site link:
 http://kokurcho.pythonanywhere.com/
 
