@@ -8,6 +8,6 @@
 - LocalStorage for adding dark/light theme, last visit date and article translation
 - Docker for splitting a project into microservices
 - Hosting pythonanywhere.com
-## Hosting site link:
+## Hosting site link (doesn't work now):
 http://kokurcho.pythonanywhere.com/
 
